@@ -12,11 +12,16 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testItShowsAMainPage()
-    {
+    public function testItShowsAMainPage(){
         $response = $this->get('/');
 
         $response->assertStatus(200);
+    }
+
+    public function testItShowsText(){
+        $response = $this->get('/');
+
+        $response->assertSee('');
     }
 
 
